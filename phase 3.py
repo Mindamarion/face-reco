@@ -1,4 +1,5 @@
 # phase3.py
+import os
 import pickle
 import numpy as np
 from sklearn.model_selection import train_test_split
@@ -40,5 +41,10 @@ print(f"[INFO] Model accuracy: {acc * 100:.2f}%")
 # ===============================
 # Save the trained model
 # ===============================
-pickle.dump(model, open("models/face_recognition_model.pkl", "wb"))
-print("[INFO] Model saved as models/face_recognition_model.pkl")
+os.makedirs("embeddings", exist_ok=True)
+
+# Save trained classifier
+with open("embeddings/face_recognizer.pkl", "wb") as f:
+    pickle.dump(model, f)
+
+print("[INFO] Classifier saved to embeddings/face_recognizer.pkl")

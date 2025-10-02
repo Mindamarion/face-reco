@@ -52,3 +52,7 @@ with open("embeddings/face_embeddings.pkl", "wb") as f:
     pickle.dump(data, f)
 
 print("[INFO] Embeddings saved to embeddings/face_embeddings.pkl")
+# Save label encoder
+with open("embeddings/label_encoder.pkl", "wb") as f:
+    pickle.dump(le, f)
+print("[INFO] Label encoder saved to embeddings/label_encoder.pkl")
